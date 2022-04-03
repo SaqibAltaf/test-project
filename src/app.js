@@ -12,7 +12,7 @@ const app = express();
 // we imported express and set up a new express 
 // instance const app = express().
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // We set up a new express.json() middleware - this
