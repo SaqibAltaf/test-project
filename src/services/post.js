@@ -17,16 +17,24 @@ export default class postService {
 
     static create(body) {
         let newPostObj = body.boxes || [];
-        const boxSize = body.boxes.map((val)=>{
-            
+        let width=0
+        let height=0
+        let length=0
+        newPostObj.map((val)=>{
+            height = height + val.height
+            if(width<val.width){
+                width=val.width
+            }
+            if(length<val.length){
+                length=val.length
+            }
         })
+
+
         return new Promise((resolve, reject) => {
-            postDatabase.create(newPostObj)
-                .then((response) => {
-                    resolve(response);
-                }).catch((error) => {
-                    reject(error);
-                })
+            resolve({
+                height,width,length
+            })
 
         })
     }
