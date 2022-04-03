@@ -12,7 +12,7 @@ class postsController {
             })
     }
 
-    create(request, response) {
+    post(request, response) {
         postService.create(request.body)
             .then((data) => {
                 Helper.responseJsonHandler(null, data, response)

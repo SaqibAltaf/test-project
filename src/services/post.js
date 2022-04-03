@@ -16,10 +16,10 @@ export default class postService {
     }
 
     static create(body) {
-        let newPostObj = body.postObject || {
-            title: "Node.js",
-            description: "Node. js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications. Node. js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.",
-        };
+        let newPostObj = body.boxes || [];
+        const boxSize = body.boxes.map((val)=>{
+            
+        })
         return new Promise((resolve, reject) => {
             postDatabase.create(newPostObj)
                 .then((response) => {
